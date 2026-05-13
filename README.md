@@ -2,6 +2,12 @@
 
 A tiny PHP/JavaScript web app that lets you find Spotify playlists, inspect their songs, and start or stop playback from a simple storytime-friendly UI.
 
+Production URL:
+
+```text
+https://storytime.buettiker.org/
+```
+
 ## MVP scope
 
 - Spotify OAuth login
@@ -23,21 +29,27 @@ The Spotify Web API playback endpoints require `user-modify-playback-state` and 
 
 ## Spotify app setup
 
-Create an app in the Spotify Developer Dashboard and add the callback URL that points to this app, for example:
+Create an app in the Spotify Developer Dashboard and add this production callback URL:
 
 ```text
-https://example.com/callback.php
+https://storytime.buettiker.org/callback.php
+```
+
+For local development, also add:
+
+```text
+http://localhost:8080/callback.php
 ```
 
 ## Environment variables
 
-Set these variables on the server:
+Set these variables on the production server:
 
 ```bash
 SPOTIFY_CLIENT_ID=your-client-id
 SPOTIFY_CLIENT_SECRET=your-client-secret
-SPOTIFY_REDIRECT_URI=https://example.com/callback.php
-APP_BASE_URL=https://example.com
+SPOTIFY_REDIRECT_URI=https://storytime.buettiker.org/callback.php
+APP_BASE_URL=https://storytime.buettiker.org
 ```
 
 For local development you can use PHP's built-in server:
